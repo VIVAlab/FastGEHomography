@@ -141,7 +141,7 @@ int  hestSSE2EnsureCapacity(PROSAC_HEST_SSE2* p, unsigned N, double beta){
 		p->nrSize = 0;
 	}else{
 		/* Ensure table at least as big as N and made for correct beta. */
-		if(p->nrTBL && p->nrBeta == beta && p->nrSize <= N){
+		if(p->nrTBL && p->nrBeta == beta && p->nrSize >= N){
 			/* Table already correctly set up */
 		}else{
 			if(p->nrSize < N){
