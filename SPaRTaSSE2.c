@@ -1148,7 +1148,7 @@ static inline void sacRndSmpl(unsigned  sampleSize,
 
 static inline double sacRandom(void){
 #ifdef _WIN32
-	return rand()/RAND_MAX;
+	return ((double)rand())/RAND_MAX;
 #else
 	return ((double)random())/INT_MAX;
 #endif
