@@ -1318,7 +1318,7 @@ inline void   RHO_HEST_REFC::nStarOptimize(void){
             best_n      = test_n;
             bestNumInl  = testNumInl;
         }
-        testNumInl -= !!arg.inl[test_n-1];
+        testNumInl -= !!best.inl[test_n-1];
     }
 
     if(bestNumInl*ctrl.phMax > ctrl.phNumInl*best_n){
@@ -1363,7 +1363,9 @@ inline void   RHO_HEST_REFC::outputModel(void){
 
 inline void   RHO_HEST_REFC::outputZeroH(void){
     memset(arg.finalH, 0, HSIZE);
-    memset(arg.inl,    0, arg.N);
+    if(arg.inl){
+        memset(arg.inl,    0, arg.N);
+    }
 }
 
 /**

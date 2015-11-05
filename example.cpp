@@ -16,7 +16,7 @@ int main(int argc, char* argv[]){
     vector<Point2f> dst;	/* should be filled */
     int npoints = 100;
 
-    Mat    tempMask;
+    Mat    tempMask, _H;
     bool   result;
     const double ransacReprojThreshold = 3;
     double beta = 0.35; /* 0.35 is a value that often works. */
